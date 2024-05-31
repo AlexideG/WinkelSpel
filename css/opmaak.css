@@ -17,8 +17,13 @@ h1 {
     margin-top: 20px;
 }
 
-h2 {
+span {
     margin-top: 10px;
+    font-family: monospace;
+}
+
+#storeNameDisplay {
+    font-family: monospace;
 }
 
 #YourStore {
