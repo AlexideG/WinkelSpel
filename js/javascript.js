@@ -20,8 +20,9 @@ const storeNameDisplay = document.getElementById("storeNameDisplay");
 //tot hierboven
 
 const modal = document.getElementById("modal");
+//in de les met groepje
 //Pakt een random geluid uit deze lijst
-const HornSound = [
+const hornSound = [
     new Audio("audio/buysupplies.mp3"), //https://www.youtube.com/watch?v=iFPBhBRMyfw
     new Audio("audio/buysupplies2.mp3"), //https://www.youtube.com/watch?v=1YZpolqB6Us
     new Audio("audio/buysupplies3.mp3"), //https://www.youtube.com/watch?v=Zgn_IFQj2aY
@@ -43,7 +44,7 @@ let score = 0;
 
 // functions
 function inkopen() { //De knop om supplies te kopen
-    RandomHorn();//speelt een random toeter sound effect van HornSound
+    randomHorn();//speelt een random toeter sound effect van hornSound
     if (score >= 40) { // checken of geld boven prijs is
         score -= 40; // 40 van geld af
         scoreElement.textContent = score;
@@ -53,16 +54,13 @@ function inkopen() { //De knop om supplies te kopen
     }
 }
 
-function RandomHorn(){ // kiest een random toeter geluid van de 4
-    const randomIndex = Math.floor(Math.random() * HornSound.length); // de wiskunde om een random toeter te kiezen
-    const randomHorn = HornSound [randomIndex];
+function randomHorn(){ // kiest een random toeter geluid van de 4
+    const randomIndex = Math.floor(Math.random() * hornSound.length); // de wiskunde om een random toeter te kiezen
+    const randomHorn = hornSound [randomIndex];
     randomHorn.play(); //zorgt ervoor dat de toeter af kan spelen
 } // de functie zodat er random een toeter sound effect wordt gekozen
 
-//chat gpt, prompt: how do i add to the code that 
-//the first thing you see is a prompt to name your 
-//store, and after you named it you can see it at the top of the screen
-// Prompt for store name on page load
+
 window.onload = function() { //zorgt dat de pop up komt om je winkel een naam te geven als je de website opstart
     userName = prompt("What is your store called?"); //De vraag die hij stelt
     if (userName) {
@@ -73,7 +71,7 @@ window.onload = function() { //zorgt dat de pop up komt om je winkel een naam te
     // tot hierboven
 }
 
-// chat gpt, prompt: User
+// chat gpt, prompt:
 // hoe voeg ik in html/css/javascript een score toe die elke 2 seconden met 15 omhoog gaat?
 function updateScore() { // zorgt dat de score met 15 omhoog gaat
     if (width > 0){ // zolang de breedte van de progressbar groter is dan nul komt er score bij
