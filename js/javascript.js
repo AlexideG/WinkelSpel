@@ -1,23 +1,10 @@
 // constanten
 const koopGoederen = document.getElementById("supplies");
-// chat gpt, prompt: kan jij stap voor stap uitleggen hoe ik een horizontale bar
-// kan maken die langzaam naar beneden gaat, en als je op een knop drukt
-// dat de bar weer vol is?
 const progressBar = document.querySelector("#progress-bar");
 const resetButton = document.getElementById("supplies");
-//tot hierboven
-
-// chat gpt, prompt: User
-// hoe voeg ik in html/css/javascript een score toe die elke 2 seconden met 15 omhoog gaat?
 const scoreElement = document.getElementById("score");
-//tot hierboven
-
-//chat gpt, prompt: how do i add to the code that 
-//the first thing you see is a prompt to name your 
-//store, and after you named it you can see it at the top of the screen
 const storeNameButton = document.getElementById("storeName");
 const storeNameDisplay = document.getElementById("storeNameDisplay");
-//tot hierboven
 
 const modal = document.getElementById("modal");
 //in de les met groepje
@@ -31,16 +18,8 @@ const hornSound = [
 const yourStore = document.getElementById("YourStore")
 
 // lets
-// chat gpt, prompt: kan jij stap voor stap uitleggen hoe ik een horizontale bar
-// kan maken die langzaam naar beneden gaat, en als je op een knop drukt
-// dat de bar weer vol is?
 let width = 100;
-// tot hierboven
-
-// chat gpt, prompt: User
-// hoe voeg ik in html/css/javascript een score toe die elke 2 seconden met 15 omhoog gaat?
 let score = 0;
-// tot hierboven
 
 // functions
 function inkopen() { //De knop om supplies te kopen
@@ -53,7 +32,7 @@ function inkopen() { //De knop om supplies te kopen
         alert('You broke as hell!'); //melding als je te weinig geld hebt
     }
 }
-
+// Hulp van Mart
 function randomHorn(){ // kiest een random toeter geluid van de 4
     const randomIndex = Math.floor(Math.random() * hornSound.length); // de wiskunde om een random toeter te kiezen
     const randomHorn = hornSound [randomIndex];
@@ -97,29 +76,19 @@ function decreaseProgress() { // zorgt dat de progress bar naar benden gaat
 }
 // tot hierboven
 
-
-//chat gpt, prompt: Can you now add that when you press the button ''buy supplies'' the screen goes 
-//a little dark for 6 seconds and text appears
-//saying, ''supplies being delivered'' and that after 6 seconds it disapeares
 function showModal() { // zorgt ervoor dat er een overlay op het scherm komt die 5 seconden duurt en daarna weggaat
-    modal.style.display = 'flex'; //zorgt dat het een overlay wordt
+    modal.style.display = "flex"; //zorgt dat het een overlay wordt
     setTimeout(function() { //zorgt dat de functie maar voor een bepaalde tijd wordt uitgevoerd
         modal.style.display = 'none'; //dit zorgt ervoor de de modal ook weer weggaat
     }, 5000); //het duurt 5 seconden
 }
-// Tot hierboven
 
 
 // event listeners
 koopGoederen.addEventListener("click", inkopen); //als er geklikt wordt, dan wordt de inkopen functie uitgevoerd
-
-// chat gpt, prompt: kan jij stap voor stap uitleggen hoe ik een horizontale bar
-// kan maken die langzaam naar beneden gaat, en als je op een knop drukt
-// dat de bar weer vol is?
 setInterval(decreaseProgress, 2000); // zorgt ervoor dat decreaseProgress elke 2 seconden gebeurd
-
 resetButton.addEventListener('click', function() { // als je op de knop klikt dan vult de bar weer vol naar 100%
     width = 100;
     progressBar.style.width = width + '%';
 });
-// tot hierboven
+
